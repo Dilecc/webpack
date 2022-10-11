@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/analytics.js":
+/*!**************************!*\
+  !*** ./src/analytics.js ***!
+  \**************************/
 /***/ (() => {
 
-eval("const post = new Post(\"webpack post title\")\r\n\r\nconsole.log(\"post to string\", post.toString())\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("function createAnalytics() {\r\n  let counter = 0;\r\n  let destroyed = false;\r\n  const listener = () => counter++;\r\n\r\n  document.addEventListener(\"click\", listener);\r\n\r\n  return {\r\n    destroy() {\r\n      document.removeEventListener(\"click\", listener);\r\n      destroyed = true;\r\n    },\r\n    getClicks() {\r\n      if (destroyed) {\r\n        return \"analytics is destroyed. total clicks = ${counter}\";\r\n      }\r\n      return counter;\r\n    },\r\n  };\r\n}\r\n\r\nwindow.analitycs = createAnalytics();\n\n//# sourceURL=webpack://webpack/./src/analytics.js?");
 
 /***/ })
 
@@ -26,7 +26,7 @@ eval("const post = new Post(\"webpack post title\")\r\n\r\nconsole.log(\"post to
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	__webpack_modules__["./src/analytics.js"]();
 /******/ 	
 /******/ })()
 ;
