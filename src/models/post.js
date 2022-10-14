@@ -1,6 +1,6 @@
 export default class Post {
   constructor(title, img) {
-    (this.title = title), (this.data = new Date()), (this.img = img);
+    this.title = title, this.data = new Date(), this.img = img;
   }
 
   toString() {
@@ -8,7 +8,7 @@ export default class Post {
       title: this.title,
       data: this.data.toJSON(),
       img: this.img,
-    });
+    }, null , 2);
   }
 
   get uppercaseTitle() {

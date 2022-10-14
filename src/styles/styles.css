@@ -1,3 +1,10 @@
+@import "~normalize.css";
+@import "roboto.css";
+
+body{
+    font-family: "Roboto", sans-serif;  
+}
+
 .container{
     padding-top: 2pem;
     min-width: 1000px;
@@ -9,7 +16,7 @@ h1{
 }
 
 .logo {
-background-image: url("../assets/webpack-logo.png");
+background-image: url("~/assets/webpack-logo.png");
 background-size: cover;
 height: 200px;
 width: 200px;
